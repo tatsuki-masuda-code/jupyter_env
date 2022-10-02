@@ -14,7 +14,7 @@ Please visit the project documentation site for help to use and contribute to th
 
 ## Usage
 
-Install dockerExecute these commands in your terminal
+Execute these commands in your terminal
 
 ```
 docker build https://github.com/tatsuki-masuda-code/jupyter_env.git#main -t my_notebook
