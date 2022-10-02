@@ -23,7 +23,7 @@ docker run --rm -it -p 8888:8888 -v C:/mnt/hogehoge:/home/jovyan/work my_noteboo
 
 If you want additional packages, you can pip/conda in the jupyter lab.
 
-If you want some heavy packages which should've always been in the docker image, write it to Issues and let me know.
+If you want some heavy packages which always should've been in the docker image, write it to Issues and let me know.
 Thank you.
 
 
