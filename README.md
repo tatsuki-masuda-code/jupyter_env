@@ -14,15 +14,17 @@ Please visit the project documentation site for help to use and contribute to th
 
 ## Usage
 
-Execute these commands in your terminal
+Install dockerExecute these commands in your terminal
 
 ```
 docker build https://github.com/tatsuki-masuda-code/jupyter_env.git#main -t my_notebook
 docker run --rm -it -p 8888:8888 -v C:/mnt/hogehoge:/home/jovyan/work my_notebook
 ```
 
-If you want additional packages, write it to Issues and let me know.
+If you want additional packages, you can pip/conda in the jupyter lab.
 
+If you want some heavy packages which should've always been in the docker image, write it to Issues and let me know.
+Thank you.
 
 
 
