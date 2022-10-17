@@ -11,3 +11,20 @@ Please visit the project documentation site for help to use and contribute to th
 - [Jupyter Docker Stacks on ReadTheDocs](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)
 - [Selecting an Image :: Core Stacks :: jupyter/tensorflow-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-tensorflow-notebook)
 - [Image Specifics :: Tensorflow](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/specifics.html#tensorflow)
+
+## Usage
+
+Execute these commands in your terminal
+
+```
+docker build https://github.com/tatsuki-masuda-code/jupyter_env.git#main -t my_notebook
+docker run --rm -it -p 8888:8888 -v C:/mnt/hogehoge:/home/jovyan/work my_notebook
+```
+
+If you want additional packages, you can pip/conda in the jupyter lab.
+
+If you want some heavy packages which should've been in the docker image, write it to Issues and let me know.
+Thank you.
+
+
+
