@@ -8,7 +8,8 @@ RUN mamba install --quiet --yes \
     'lightgbm' \
     'xgboost' \
     'optuna' \
-    'plotly' && \
+    'plotly' \
+    'openpyxl' && \
     #混ぜるな危険だけど、torchだけはpip3
     pip3 install \
     torch \
