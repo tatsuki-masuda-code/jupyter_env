@@ -3,18 +3,35 @@ FROM jupyter/datascience-notebook:latest
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Install Python 3 packages
+USER root
+RUN apt-get update --yes && \
+    apt-get install --yes --no-install-recommends \
+    graphviz && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+USER ${NB_UID}
+# Install Python 3 packages/
+
 RUN mamba install --quiet --yes \
     'lightgbm' \
     'xgboost' \
     'optuna' \
     'plotly' \
-    'openpyxl' && \
-    #混ぜるな危険だけど、torchだけはpip3
-    pip3 install \
-    torch \
-    torchvision && \
-    mamba clean --all -f -y && \
+    'openpyxl' \
+    'gym' \
+    'python-graphviz' \
+    -c 'conda-forge' && \
+    mamba clean --all -f -y
+
+RUN pip3 install --quiet --no-cache-dir \
+    'torch' \
+    'torchvision' \
+    'torchaudio'
+
+RUN pip3 install --quiet --no-cache-dir \
+    'japanize-matplotlib' \
+    'jupyterlab-kite' \
+    'ccxt' && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
