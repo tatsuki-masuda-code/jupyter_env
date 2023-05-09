@@ -23,17 +23,16 @@ RUN mamba install --quiet --yes \
     -c 'conda-forge' && \
     mamba clean --all -f -y
 
-RUN pip3 install --quiet --no-cache-dir \
-    'torch' \
-    'torchvision' \
-    'torchaudio'
+RUN pip3 install --upgrade --quiet --no-cache-dir pip && \
+    pip3 install --quiet --no-cache-dir \
+    --index-url https://download.pytorch.org/whl/cpu \
+    'torch'
 
 RUN pip3 install --quiet --no-cache-dir \
     'japanize-matplotlib' \
-    'jupyterlab-kite' \
-    'ccxt' && \
-    fix-permissions "${CONDA_DIR}" && \
+    'ccxt'
+
+RUN fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
-CMD ["jupyterhub-singleuser", "--allow-root"]
 WORKDIR "${HOME}"
