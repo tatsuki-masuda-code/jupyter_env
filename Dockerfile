@@ -10,9 +10,10 @@ RUN apt-get update --yes && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER ${NB_UID}
+
 # Install Python 3 packages/
 
-RUN mamba install --quiet --yes \
+ RUN mamba install --quiet --yes \
     'lightgbm' \
     'xgboost' \
     'optuna' \
@@ -30,7 +31,7 @@ RUN mamba install --quiet --yes \
     -c pytorch && \
     mamba clean --all -f -y
 
-RUN pip3 install --upgrade --quiet --no-cache-dir && \
+RUN pip3 install --upgrade --quiet --no-cache-dir \
     'japanize-matplotlib' \
     'ccxt'
 
