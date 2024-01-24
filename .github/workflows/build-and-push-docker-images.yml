@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - 'main'
-      
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -27,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }} / jupyter-envs:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/jupyter-envs:latest
