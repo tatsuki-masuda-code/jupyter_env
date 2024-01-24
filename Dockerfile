@@ -15,25 +15,22 @@ USER ${NB_UID}
 
 RUN mamba install --quiet --yes \
     'lightgbm' \
-    'xgboost' \
-    'optuna' \
-    'catboost' \
-    'scikit-plot' \
-    'pycaret' \
-    'autoviz' \
-    'plotly' \
-    'openpyxl' \
-    'python-graphviz' \
+    'xgboost==1.6.2' \
+    'optuna==3.5.0' \
+    'catboost==1.2.2' \
+    'scikit-plot==0.3.7' \
+    'pycaret==3.2.0' \
+    'autoviz==0.1.804' \
+    'plotly==5.18.0' \
+    'openpyxl==3.0.10' \
+    'python-graphviz==0.20.1' \
     -c 'conda-forge' && \
     mamba install --quiet --yes \
-    pytorch torchtext \
-    -c pytorch && \
+    'pytorch>=2.0.0' \
+    'cpuonly==2.0' \
+    -c 'pytorch' && \
     mamba update --all --quiet --yes && \
     mamba clean --all -f -y
-
-RUN pip3 install --upgrade --quiet --no-cache-dir \
-    'japanize-matplotlib' \
-    'ccxt'
 
 RUN fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
