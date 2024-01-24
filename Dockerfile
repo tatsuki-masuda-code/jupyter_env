@@ -31,7 +31,6 @@ RUN mamba install --quiet --yes \
     mamba clean --all -f -y
 
 RUN pip3 install --upgrade --quiet --no-cache-dir && \
-    pip3 install --quiet --no-cache-dir \
     'japanize-matplotlib' \
     'ccxt'
 
