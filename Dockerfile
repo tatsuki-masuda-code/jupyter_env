@@ -24,11 +24,11 @@ RUN mamba install --quiet --yes \
     'plotly' \
     'openpyxl' \
     'python-graphviz' \
-    -c 'conda-forge'
-
-RUN mamba install --quiet --yes \
-    pytorch \
+    -c 'conda-forge' && \
+    mamba install --quiet --yes \
+    pytorch torchtext \
     -c pytorch && \
+    mamba update --all --quiet --yes && \
     mamba clean --all -f -y
 
 RUN pip3 install --upgrade --quiet --no-cache-dir \
