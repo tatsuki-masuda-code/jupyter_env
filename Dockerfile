@@ -1,4 +1,4 @@
-#Forked from github.com/jupyter/docker-stacks 
+#Forked from github.com/jupyter/docker-stacks
 FROM jupyter/datascience-notebook:latest
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
