@@ -16,19 +16,22 @@ RUN mamba install --quiet --yes \
     'lightgbm' \
     'xgboost' \
     'optuna' \
+    'catboost' \
+    'scikit-plot' \
+    'pycaret' \
+    'autoviz' \
     'plotly' \
     'openpyxl' \
-    'gym' \
     'python-graphviz' \
-    -c 'conda-forge' && \
+    -c 'conda-forge'
+
+RUN mamba install --quiet --yes \
+    pytorch \
+    -c pytorch && \
     mamba clean --all -f -y
 
-RUN pip3 install --upgrade --quiet --no-cache-dir pip && \
+RUN pip3 install --upgrade --quiet --no-cache-dir && \
     pip3 install --quiet --no-cache-dir \
-    --index-url https://download.pytorch.org/whl/cpu \
-    'torch'
-
-RUN pip3 install --quiet --no-cache-dir \
     'japanize-matplotlib' \
     'ccxt'
 
