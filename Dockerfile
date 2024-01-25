@@ -12,6 +12,8 @@ RUN apt-get update --yes && \
 USER ${NB_UID}
 
 # Install Python 3 packages/
+# import error when scipy>1.11.4
+# ref:https://github.com/reiinakano/scikit-plot/issues/119
 
 RUN mamba install --quiet --yes \
     'lightgbm' \
@@ -24,6 +26,7 @@ RUN mamba install --quiet --yes \
     'plotly==5.18.0' \
     'openpyxl==3.0.10' \
     'python-graphviz==0.20.1' \
+    'scipy==1.11.4' \
     'sweetviz==2.3.1' \
     'geopy==2.4.1' \
     -c 'conda-forge' && \
