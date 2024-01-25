@@ -24,8 +24,10 @@ RUN mamba install --quiet --yes \
     'plotly==5.18.0' \
     'openpyxl==3.0.10' \
     'python-graphviz==0.20.1' \
+    'sweetviz==2.3.1' \
+    'geopy==2.4.1' \
     -c 'conda-forge' && \
-    mamba install --quiet --yes \
+    mamba install --quiet --y   es \
     'pytorch>=2.0.0' \
     'cpuonly==2.0' \
     -c 'pytorch' && \
