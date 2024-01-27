@@ -29,7 +29,7 @@ RUN mamba install --quiet --yes \
     'scipy==1.11.4' \
     'sweetviz==2.3.1' \
     'geopy==2.4.1' \
-    'cmdstanpy==1.2.0 ' \
+    'cmdstanpy==1.2.0' \
     'arviz==0.17.0' \
     -c 'conda-forge' && \
     mamba install --quiet --y   es \
