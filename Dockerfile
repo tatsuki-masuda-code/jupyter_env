@@ -32,7 +32,7 @@ RUN mamba install --quiet --yes \
     'cmdstanpy==1.2.0' \
     'arviz==0.17.0' \
     -c 'conda-forge' && \
-    mamba install --quiet --y   es \
+    mamba install --quiet --yes \
     'pytorch>=2.0.0' \
     'cpuonly==2.0' \
     -c 'pytorch' && \
