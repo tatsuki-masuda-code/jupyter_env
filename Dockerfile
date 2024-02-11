@@ -31,6 +31,7 @@ RUN mamba install --quiet --yes \
     'geopy==2.4.1' \
     'cmdstanpy==1.2.0' \
     'arviz==0.17.0' \
+    'cvxpy==1.4.2' \
     -c 'conda-forge' && \
     mamba install --quiet --yes \
     'pytorch>=2.0.0' \
